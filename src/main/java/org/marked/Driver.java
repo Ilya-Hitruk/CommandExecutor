@@ -3,7 +3,7 @@ package org.marked;
 import org.command.executor.annotations.Command;
 import org.command.executor.annotations.Param;
 
-@Command("Driver")
+@Command("printInfo")
 public class Driver implements Runnable {
 
     @Param("name")
@@ -14,11 +14,6 @@ public class Driver implements Runnable {
 
     @Override
     public void run() {
-        printInfo();
-    }
-
-    public void printInfo() {
         System.out.println(name + " " + licenceId);
     }
-
 }

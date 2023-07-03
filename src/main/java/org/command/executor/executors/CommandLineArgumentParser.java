@@ -3,7 +3,6 @@ package org.command.executor.executors;
 import org.command.executor.interfaces.ArgumentParser;
 
 public class CommandLineArgumentParser implements ArgumentParser {
-
     public Object parseArgument(String value, Class<?> targetType) {
         if (targetType.equals(int.class) || targetType.equals(Integer.class)) {
             return Integer.parseInt(value);
@@ -14,5 +13,4 @@ public class CommandLineArgumentParser implements ArgumentParser {
         }
         return value;       // for String
     }
-
 }

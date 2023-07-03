@@ -59,7 +59,7 @@ public class CommandExecutor {
             return;
         }
 
-        Method[] methods = clazz.getDeclaredMethods();
+
         Field[] fields = clazz.getDeclaredFields();
 
         try {
@@ -69,17 +69,11 @@ public class CommandExecutor {
             return;
         }
 
-
-        for (Method method : methods) {
-            if (method.getName().equals(arguments.getCommand())) {
-                try {
-                    method.invoke(instance);
-                } catch (IllegalAccessException | InvocationTargetException e) {
-                    logger.warn(Warns.SPECIFIED_METHOD_CANT_BE_INVOKED.getMessage());
-                    return;
-                }
-                break;
-            }
+        try {
+            Method method = clazz.getDeclaredMethod("run");
+            method.invoke(instance);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            logger.warn(Warns.SPECIFIED_METHOD_CANT_BE_INVOKED.getMessage());
         }
     }
 }

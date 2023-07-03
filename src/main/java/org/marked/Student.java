@@ -3,7 +3,7 @@ package org.marked;
 import org.command.executor.annotations.Command;
 import org.command.executor.annotations.Param;
 
-@Command("Student")
+@Command("showInfo")
 public class Student implements Runnable {
 
     public Student() {
@@ -20,10 +20,6 @@ public class Student implements Runnable {
 
     @Override
     public void run() {
-        showInfo();
-    }
-
-    public void showInfo() {
         System.out.println(name + " " + age + " " + avgGrade);
     }
 }
