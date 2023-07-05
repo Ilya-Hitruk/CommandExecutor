@@ -7,7 +7,6 @@ public enum Warns {
     NO_DECLARED_METHOD("Class with specified method wasn't found"),
     NO_SUCH_PACKAGE("Package wasn't found"),
     INVALID_OPERATION_WITH_CLASS("Invalid operation with class"),
-    ARGUMENTS_CANT_BE_ACCESSED("Argument cant be accessed"),
     SPECIFIED_METHOD_CANT_BE_INVOKED("Specified method cant be invoked");
 
 

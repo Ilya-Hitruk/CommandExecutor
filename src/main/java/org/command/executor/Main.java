@@ -5,7 +5,10 @@ import org.command.executor.executors.CommandExecutor;
 public class Main {
 
     public static void main(String[] args) {
-        CommandExecutor.execute("org.marked", args);
+        int exceptions = CommandExecutor.execute("org.marked", args);
+        if (exceptions > 0) {
+            System.exit(exceptions);
+        }
     }
 }
 
